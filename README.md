@@ -1,5 +1,22 @@
 # Pipoca
 
+
+## Como fica visto pelo smartphone e apontando para o marcador ?
+
+> Acesse o [site](https://pipoca.surge.sh)
+
+* Esperar carregar e autorizar o uso da camera.
+
+* Apontar a câmera para o marcador.
+
+- Marcador:
+
+    ![Marcadorpipoca](marker/marker.png)
+
+- Resultado:
+
+![Exemplo](assets/example.jpeg)
+
 ## Ferramentas usadas
 
 1. Personalização de marcador:
@@ -26,13 +43,3 @@
     - [Favicon Generator](https://realfavicongenerator.net/)
 
 8. Nome do cão modelo: **Pipoca**
-
-## Como fica visto pelo smartphone e apontando para o marcador ?
-
-- Marcador:
-
-    ![Marcadorpipoca](marker/marker.png)
-
-- Resultado:
-
-![Exemplo](assets/example.jpeg)
