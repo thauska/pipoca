@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Pipoca RA</title>
+
+    <script src="statics/aframe.min.js"></script>
+    <script src="statics/aframe-ar.1.6.2.js"></script>
+    <script src="statics/aframe-particle-system-component.min.js"></script>
+</head>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam; detectionMode: mono; trackingMethod: best; patternRatio:0.90; debugUIEnabled: false;" 
+             antialias="true"
+             vr-mode-ui="enabled: false">
+
+        <a-assets>
+            <a-asset-item id="pipoca" rotation="-2.2666210375375364 66.20355435398123 3.1191822366922017" position="-1.19635 -0.49559 -0.12562" src="assets/pop_corn/scene.glb"></a-asset-item>
+            <img src="assets/wood.jpg" id="wood">
+            <img src="assets/wood-NM.jpg" id="woodNM">
+            <img src="assets/05.jpeg" id="foto">
+        </a-assets> 
+          
+
+        <a-marker id="mpipoca" preset="custom" type="pattern" url="marker/pattern-marker.patt">
+            <a-entity id="merge" >
+                <a-curvedimage id="fotocurvada" src="#foto" scale="2.3 2.3 2.3" radius="1.5" theta-length="50" position="-0.09175 0.50668 2.53224" 
+                                rotation="5.301578478345507 153.62774656622275 -3.4726971962879194"></a-curvedimage>
+                <a-entity id="love-particle" position="-1.3 -0.5 -0.1" particle-system="type: 3; color: #ffffff, #ff0000; texture: assets/popcorn.png; maxAge: 20; randomize: true; rotationAxis: y; velocitySpread: 3.0 2.0 3.0; blending: 1; velocityValue: 1.0 3.0 1.0; particleCount: 800;"></a-entity>
+                <a-entity id="pipoca" gltf-model="#pipoca" scale="0.005 0.005 0.005" 
+                            position="-1.1 -0.6 -0.2" rotation="-2.26 60 3.12" shadow>
+                </a-entity>
+                <a-text id="texto" font="mozillavr" value="Te amo, titia!" color="black" align="center" 
+                        scale="1.2 1.2 1.2" rotation="-90 0 0" position="0.2 -0.9 -0.2"
+                        shadow>
+                </a-text>
+                <a-plane id="floor" src="#wood" rotation="-90 0 0" scale="3.03661 1 1.5" position="0 -1 -0.28296" normal-map="#woodNM"
+                            shadow="cast: false">
+                </a-plane>
+            </a-entity> 
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    
+    </a-scene>
+</body>
+</html>
